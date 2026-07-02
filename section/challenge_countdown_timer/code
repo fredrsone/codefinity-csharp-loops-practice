@@ -1,0 +1,28 @@
+/*Task
+Write a program that prints a countdown from 10 to 0, each number on a new line.
+
+Use a for loop to count down from 10 to 0.
+Print each number in the countdown on its own line.
+
+*/
+using System;
+
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            PrintCountdown();
+        }
+
+        public static void PrintCountdown()
+        {
+            // Write your code here
+            for (int i = 10; i >= 0; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+}
