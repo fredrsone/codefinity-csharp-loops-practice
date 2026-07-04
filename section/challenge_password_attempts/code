@@ -1,0 +1,49 @@
+/*Task
+Strengthen your while loop skills by building a password entry system. Complete the following steps:
+
+Use a while loop to process password attempts, stopping if the correct password is entered or if the maximum number of attempts is reached.
+Try not use if, else, or break statements inside the loop.
+On each attempt, print the password entered.
+Print a message showing how many attempts remain after each incorrect guess.
+When the correct password is entered, print a success message and stop further attempts.
+If all attempts are used without entering the correct password, print an account locked message after the loop.*/
+using System;
+
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            string correctPassword = "letmein";
+            string[] simulatedInputs = { "1234", "password", "letmein" };
+            int attemptsLeft = 3;
+
+            SimulatePasswordAttempts(correctPassword, simulatedInputs, attemptsLeft);
+        }
+
+        public static void SimulatePasswordAttempts(string correctPassword, string[] attempts, int maxAttempts)
+        {
+            int index = 0;
+            int remaining = maxAttempts;
+            bool found = false;
+
+            while (remaining > 0 && index < attempts.Length && !found)
+            {
+                string attempt = attempts[index];
+                Console.WriteLine("Password entered: " + attempt);
+
+                found = (attempt == correctPassword);
+                Console.WriteLine(!found
+                    ? "Incorrect password. Attempts left: " + (remaining - 1)
+                    : "Access granted!");
+
+                remaining -= found ? 0 : 1;
+                index++;
+            }
+
+            if (!found)
+                Console.WriteLine("Account locked. Too many failed attempts.");
+        }
+    }
+}
