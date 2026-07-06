@@ -1,0 +1,43 @@
+/*Task
+Write a function that prints only the odd numbers from the provided array using a while loop and the continue statement.
+
+Loop through each element in the numbers array using a while loop.
+Use the continue statement to skip any even numbers.
+Print each odd number to the console.
+
+*/
+using System;
+
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void PrintOddNumbersWhile(int[] numbers)
+        {
+            // Write your code here
+            int i = 0;
+            while (i < numbers.Length)
+            {
+                if (numbers[i] % 2 ==0)
+                {
+                    i++;
+                    continue;
+                }
+                Console.WriteLine("Odd number: " + numbers[i]);
+                i++;
+            }
+        }
+
+        public static void Main()
+        {
+            int[] arr = { 8, 13, 20, 25, 34, 41, 56, 67 };
+            PrintOddNumbersWhile(arr);
+        }
+    }
+}
+/* Output:
+Odd number: 13
+Odd number: 25
+Odd number: 41
+Odd number: 67
+*/
