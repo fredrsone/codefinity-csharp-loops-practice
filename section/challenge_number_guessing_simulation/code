@@ -1,0 +1,120 @@
+/*Task
+Simulate a number guessing game using a do-while loop. The loop should always run at least once, even if the first guess is correct.
+
+Use the guesses array to represent a series of guesses.
+Compare each guess to the secretNumber.
+If a guess matches the secret number, set guessedCorrectly to true.
+After each guess, increment the index variable.
+Print "You guessed it!" if the guess is correct, or "Try again." if not.
+using System;
+Starting code:
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            int secretNumber = 5;
+            int[] guesses = { 2, 3, 5 };
+            int index = 0;
+            bool guessedCorrectly = false;
+
+            do
+            {
+                // Write your code here
+            
+                Console.WriteLine("Guessing number: " + currentGuess);
+                Console.WriteLine(result);
+            } while (!guessedCorrectly && index < guesses.Length);
+        }
+
+        // Added for testing
+        public static void RunGuessingGame(int secretNumber, int[] guesses)
+        {
+            int index = 0;
+            bool guessedCorrectly = false;
+            do
+            {
+                int currentGuess = guesses[index];
+                Console.WriteLine("Guessing number: " + currentGuess);
+                if (currentGuess == secretNumber)
+                {
+                    guessedCorrectly = true;
+                    string result = "You guessed it!";
+                    Console.WriteLine(result);
+                }
+                else
+                {
+                    string result = "Try again.";
+                    Console.WriteLine(result);
+                }
+                index++;
+            } while (!guessedCorrectly && index < guesses.Length);
+        }
+    }
+}*/
+using System;
+
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            int secretNumber = 5;
+            int[] guesses = { 2, 3, 5 };
+            int index = 0;
+            bool guessedCorrectly = false;
+
+            do
+            {
+                int currentGuess = guesses[index];
+                string result;
+
+                if (currentGuess == secretNumber)
+                {
+                    guessedCorrectly = true;
+                    result = "You guessed it!";
+                }
+                else
+                {
+                    result = "Try again.";
+                }
+
+                Console.WriteLine("Guessing number: " + currentGuess);
+                Console.WriteLine(result);
+
+                index++;
+            }
+            while (!guessedCorrectly && index < guesses.Length);
+        }
+
+        // Added for testing
+        public static void RunGuessingGame(int secretNumber, int[] guesses)
+        {
+            int index = 0;
+            bool guessedCorrectly = false;
+            do
+            {
+                int currentGuess = guesses[index];
+                string result;
+
+                if (currentGuess == secretNumber)
+                {
+                    guessedCorrectly = true;
+                    result = "You guessed it!";
+                }
+                else
+                {
+                    result = "Try again.";
+                }
+
+                Console.WriteLine("Guessing number: " + currentGuess);
+                Console.WriteLine(result);
+
+                index++;
+            }
+            while (!guessedCorrectly && index < guesses.Length);
+        }
+    }
+}
