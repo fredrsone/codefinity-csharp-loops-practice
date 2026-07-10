@@ -1,0 +1,29 @@
+/*Task
+You are given a loop that is intended to print the numbers from 1 to 5. However, the loop contains a logic error that causes it to run infinitely. Your task is to correct the loop so it prints each number from 1 to 5 exactly once.
+
+The function must ensure that the loop variable progresses so the loop eventually terminates.
+The function must print the numbers 1 through 5, each on a separate line.
+*/
+using System;
+
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            PrintNumbers();
+        }
+
+        public static void PrintNumbers()
+        {
+            int i = 1;
+            while (i <= 5)
+            {
+                Console.WriteLine(i);
+                // Write your code here
+                i++;
+            }
+        }
+    }
+}
