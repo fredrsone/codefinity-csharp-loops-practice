@@ -1,0 +1,39 @@
+/*Task
+Write a program that prints a number pyramid pattern using nested loops. Each row should contain numbers starting from 1 up to the row number, with leading spaces so that the numbers form a centered pyramid.
+
+For each row from 1 to rows, print the correct number of leading spaces.
+Print the numbers in increasing order from 1 up to the current row number, separated by spaces.
+Each row should be printed on a new line.
+The pyramid should be aligned as shown in the example output.*/
+using System;
+
+namespace ConsoleApp
+{
+    public class Program
+    {
+        public static void PrintNumberPyramid(int rows)
+        {
+            // Write your code here
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= rows - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                //for (int k = 1; k <= (2 * i -1); k++)
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write(k);
+                    if (k < i) Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+            //Console.WriteLine();
+        }
+
+        public static void Main()
+        {
+            PrintNumberPyramid(5);
+        }
+    }
+}
